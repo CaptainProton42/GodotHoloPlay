@@ -1,0 +1,9 @@
+[gd_resource type="NativeScript" load_steps=2 format=2]
+
+[ext_resource path="gdholoplay.gdnlib" type="GDNativeLibrary" id=1]
+
+[resource]
+
+resource_name = "HoloPlayVolume"
+class_name = "HoloPlayVolume"
+library = ExtResource( 1 )

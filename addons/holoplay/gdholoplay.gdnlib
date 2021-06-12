@@ -1,0 +1,14 @@
+[general]
+
+singleton=false
+load_once=true
+symbol_prefix="godot_"
+reloadable=false
+
+[entry]
+
+Windows.64="res://addons/holoplay/bin/win64/libgdholoplay.dll"
+
+[dependencies]
+
+Windows.64=[  ]
