@@ -1,3 +1,16 @@
+### ⚠️ Test Release ⚠️
+### This plugin does *NOT* currently work. I'm publishing it here so people can test it. Please describe any issues you're experiencing as detailed as possible by opening an issue [here](https://github.com/CaptainProton42/GodotHoloPlay/issues)! Thanks! ⚠️
+
+### Current state:
+
+* Quilt rendering seems to work (you can enable direct output of the quilt by enabling the `Dummy` and `Debug View` properties of `HoloPlayVolume`.
+* Output on the Looking Glass itself does *not* seem to work at the moment.
+* I added some debugging output to the console that should display the properties of your Looking Glass Portrait. Please include it in your issue reports.
+
+***Report all issues [https://github.com/CaptainProton42/GodotHoloPlay/issues](issues) here!***
+
+***If you have an idea what's going on or are just curious, take a look at the [GDNative source](https://github.com/CaptainProton42/GodotHoloPlayNative).***
+
 # HoloPlay for Godot 3.x
 
 This plugin adds suport for holographics displays made by [Looking Glass Factory](https://lookingglassfactory.com/) to the [Godot Engine](https://godotengine.org/).
