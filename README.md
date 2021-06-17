@@ -7,7 +7,7 @@
 * Output on the Looking Glass itself does *not* seem to work at the moment.
 * I added some debugging output to the console that should display the properties of your Looking Glass Portrait. Please include it in your issue reports.
 
-***Report all issues [https://github.com/CaptainProton42/GodotHoloPlay/issues](issues) here!***
+***Report all issues [here](https://github.com/CaptainProton42/GodotHoloPlay/issues)!***
 
 ***If you have an idea what's going on or are just curious, take a look at the [GDNative source](https://github.com/CaptainProton42/GodotHoloPlayNative).***
 
