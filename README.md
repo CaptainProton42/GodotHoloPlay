@@ -19,7 +19,7 @@ This plugin adds suport for holographics displays made by [Looking Glass Factory
 
 The plugin can be installed from the Godot Asset Library directly in the editor. Alternatively, you can also directly clone/download this repository and add it to the *root* of your Godot project.
 
-*Note that the plugin is currently only available for Windows.*
+⚠️ *Note that the plugin is currently only available for Windows.*
 
 ## Instructions
 
@@ -31,7 +31,7 @@ Just follow the instructions in the official [getting started guide](https://doc
 
 To add a holographic Looking Glass display to your scene, use the new Spatial node `HoloPlayVolume`. After you have dropped it into your scene, all parts of the scene that are within the displayed bounding box will be displayed on the Looking Glass. The node has editable properties that can be used to adjust how the holographic content will be displayed and can be moved and rotated freely within the scene and also works in the editor.
 
-*Please enable the HiDPI setting (`display/window/dpi/allow_hidpi`) in the project settings, otherwise things ***will*** break when the display scale is not set to 100 % (see issue #2).*
+⚠️ *Please enable the HiDPI setting (`display/window/dpi/allow_hidpi`) in the project settings, otherwise things ***will*** break when the display scale is not set to 100 % (see [issue #2](https://github.com/CaptainProton42/GodotHoloPlay/issues/2)).*
 
 ### Mouse input
 
