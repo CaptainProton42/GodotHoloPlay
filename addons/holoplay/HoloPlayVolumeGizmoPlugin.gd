@@ -138,9 +138,9 @@ func set_handle(gizmo: EditorSpatialGizmo, index: int, camera: Camera, point: Ve
 
         match index:
             0:
-                display.near_clip = d
+                display.near_clip = d / display.size
             1:
-                display.far_clip = -d
+                display.far_clip = -d / display.size
     elif (index == 2):
         var r: PoolVector3Array = Geometry.get_closest_points_between_segments(Vector3(0, 0, 0), Vector3(4096, 4096 / display.get_aspect(), 0), sg[0], sg[1])
         var d: float = r[0].x
