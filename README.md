@@ -2,6 +2,8 @@
 
 This plugin adds suport for holographics displays made by [Looking Glass Factory](https://lookingglassfactory.com/) to the [Godot Engine](https://godotengine.org/).
 
+The GDNative source is hosted [here](https://github.com/CaptainProton42/GodotHoloPlayNative) and a minimal demo project is hosted [here](https://github.com/CaptainProton42/GodotHoloPlayNative).
+
 ## Table of contents
 * [Installation](#installation)
 * [Instructions](#instructions)
