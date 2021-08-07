@@ -144,6 +144,10 @@ Device index of the Looking Glass. Usually `0` for a single connected Looking Gl
 
 ### Method Descriptions
 
+* **ViewportTexture** get_quilt_tex() *const*
+
+Returns the `ViewportTexture` containing the rendered quilt. Useful for e.g. recording your holograms using OBS.
+
 * **float** get_aspect() *const*
 
 Returns the aspect ratio of the Looking Glass (screen width divided by screen height).
