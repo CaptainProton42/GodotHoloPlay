@@ -40,16 +40,17 @@ func get_editor_scale() -> float:
 
 	return editor_scale
 
-func _enter_tree() -> void:
+func create_icon(resource):
 	var editor_scale: float = get_editor_scale()
-
-	# Import the icon at the correct scale.
-	var img: Image = preload("icon_holoplayvolume.svg").get_data() 
+	var img: Image = resource.get_data() 
 	img.resize(editor_scale * 16, editor_scale * 16)
 	var icon = ImageTexture.new()
 	icon.create_from_image(img)
+	return icon
 
-	add_custom_type("HoloPlayVolume", "Spatial", preload("HoloPlayVolume.gdns"), icon)
+func _enter_tree() -> void:
+	add_custom_type("HoloPlayVolume", "Spatial", preload("HoloPlayVolume.gdns"), create_icon(preload("icon_holoplayvolume.svg")))
+	add_custom_type("HoloPlayRecorder", "Node", preload("HoloPlayRecorder.gd"), create_icon(preload("icon_holoplayrecorder.svg")))
 	add_spatial_gizmo_plugin(gizmo_plugin)
 
 	gizmo_plugin.undo_redo = get_undo_redo()
@@ -66,4 +67,5 @@ func _enter_tree() -> void:
 
 func _exit_tree() -> void:
 	remove_custom_type("HoloPlayVolume")
+	remove_custom_type("HoloPlayRecorder")
 	remove_spatial_gizmo_plugin(gizmo_plugin)

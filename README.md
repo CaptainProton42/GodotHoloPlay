@@ -12,7 +12,13 @@ The GDNative source is hosted [here](https://github.com/CaptainProton42/GodotHol
     * [Setting up the Looking Glass](#setting-up-the-looking-glass)
     * [Adding a Looking Glass to your scene](#adding-a-looking-glass-to-your-scene)
     * [Mouse input](#mouse-input)
+    * [Recording holograms](#recording-holograms)
+        * [Using HoloPlayRecorder](#using-holoplayrecorder)
 * [HoloPlayVolume Node](#holoplayvolume-node)
+    * [Property Descriptions](#property-descriptions)
+    * [Method Descriptions](#method-descriptions)
+* [HoloPlayRecorder Node](#holoplayrecorder-node)
+    * [Signals](#signals)
     * [Property Descriptions](#property-descriptions)
     * [Method Descriptions](#method-descriptions)
 * [Known issues and workarounds](#known-issues-and-workarounds)
@@ -40,6 +46,38 @@ To add a holographic Looking Glass display to your scene, use the new Spatial no
 ### Mouse input
 
 The Looking Glass runs in a separate window from Godot's main window. In order to capture the mouse cursor position in this window, use `grab_mouse`. Use `get_mouse_position` to retrieve the current position of the cursor on the hoographic display. (You can still listen to `InputEventMouseMotion` events but they will contain incorrect positions so please use `get_mouse_position`.)
+
+### Recording holograms
+
+#### Using HoloPlayRecorder
+
+You can use the `HoloPlayRecorder` node to record holograms as movies or stills. In order to do so, add a `HoloPlayRecorder` node as a child to an existing `HoloPlayVolume` node. Recording is possible directly in the editor, using the *autorecording* feature or programmatically from your game code.
+
+To capture holograms inside the editor, select the `HoloPlayRecorder` node and check either the `recording` or the `take_snapshot` property in the inspector. The former will try to save movie frames at the framerate specifiec in `target_fps` until `recording` is unchecked again, the latter will save a single frame (it is intended behaviour that the `take_snapshot` property cannot be actually checked).
+
+The property `autorecording_enabled` enables the *autorecording* feature. When runnig the scene (either exported or from the editor) containing the `HoloPlayRecorder`, a hologram recording will automatically be started after `autorecording_start` seconds and stopped after an additional `autorecording_duration` seconds. If `autorecording_quit_when_done` is checked, the game will automatically quit after the recording has finished processing (this may take longer than the actual recording as frames are queued and saved to disk in a separate thread).
+
+Recordings can also be started programmatically by setting the `recording` property to `true` or `false` or calling the `take_snapshot()` method for a single capture.
+
+⚠️ As processing all frames may take longer than recording them, you should not close the game until the `finished` signal has been emitted by the `HoloPlayRecorder` when recording movies.
+
+Movies as well as single captures will be saved to the `user://` directory which, on Windows, is located at `%appdata%\Godot\app_userdata\<your-project-name>`. Movies are stored as a series of PNG files and you will need a tool such as [FFmpeg](https://www.ffmpeg.org/) to convert them to video files.
+
+#### Using get_quilt_tex() and a screen capture software
+
+This method of recording holograms requires some setup but allows you to use an external screen capture software such as [OBS](https://obsproject.com/) to capture your holograms, for potentially smoother results.
+
+It has the drawback of limiting output resolution to your monitor resolution and blocking the main game window.
+
+1. Add a `TextureRect` node as a child of the the `HoloPlayVolume` you want to capture and set its right and bottom anchors to `1.0` so that it fills the game window.
+2. Add a script to the `TextureRect` and add the following code (depending):
+
+```
+func _ready():
+	texture = get_parent().get_quilt_tex()
+```
+3. In the project settings, set the windows size to the same width and height. The higher the resolution, the better the capture will be.
+4. Run the game and use your capture software to capture the game window.
 
 ## HoloPlayVolume Node
 
@@ -191,6 +229,46 @@ Maps a 2D position in the attached window to a starting point for ray casts into
 * **Vector3** project_ray_normal(**Vector2** screen_point) *const*
 
 Maps a 2D position in the attached window to a normalized direction vector for ray casts into the volume. Use together with `project_ray_origin()`.
+
+## HoloPlayRecorder Node
+
+The `HoloPlayRecorder` node allows you to record hologram movies and stills as a series of PNGs. See [Recording holograms](#recording-holograms) for more details.
+
+### Signals
+
+* finished
+
+Emitted when all started recordings have finished *processing*, that is the recording has finished and all frames have been saved to disk. You should always check that this signal has been emitted before closing the game.
+
+### Property Descriptions
+
+* **bool** recording
+
+|||
+|-----------|----------------------|
+| *Default* | `false`              |
+| *Setter*  | set_recording(value) |
+| *Getter*  | get_recording()      |
+
+Setting this property starts and stops recording a movie. The movie will be saved as a series of PNGs in the `user://` directory.
+
+* **int** target_fps
+
+|||
+|-----------|-----------------------|
+| *Default* | `25`                  |
+| *Setter*  | set_target_fps(value) |
+| *Getter*  | get_target_fps()      |
+
+Sets the target FPS for movie recordings.
+
+*The remaining properties are left out since they should only be used from the inspector in the editor.*
+
+### Method Descriptions
+
+* **void** take_snapshot()
+
+Saves the current quilt as a PNG file to the `user://` directory.
 
 ## Known issues and workarounds
 
