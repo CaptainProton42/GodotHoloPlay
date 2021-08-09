@@ -14,6 +14,7 @@ The GDNative source is hosted [here](https://github.com/CaptainProton42/GodotHol
     * [Mouse input](#mouse-input)
     * [Recording holograms](#recording-holograms)
         * [Using HoloPlayRecorder](#using-holoplayrecorder)
+        * [Using get_quilt_tex() and a screen capture software](#using-get_quilt_tex-and-a-screen-capture-software)
 * [HoloPlayVolume Node](#holoplayvolume-node)
     * [Property Descriptions](#property-descriptions)
     * [Method Descriptions](#method-descriptions)
