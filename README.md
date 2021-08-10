@@ -14,20 +14,21 @@ The GDNative source is hosted [here](https://github.com/CaptainProton42/GodotHol
     * [Mouse input](#mouse-input)
     * [Recording holograms](#recording-holograms)
         * [Using HoloPlayRecorder](#using-holoplayrecorder)
+        * [Using get_quilt_tex() and a screen capture software](#using-get_quilt_tex-and-a-screen-capture-software)
 * [HoloPlayVolume Node](#holoplayvolume-node)
     * [Property Descriptions](#property-descriptions)
     * [Method Descriptions](#method-descriptions)
 * [HoloPlayRecorder Node](#holoplayrecorder-node)
     * [Signals](#signals)
-    * [Property Descriptions](#property-descriptions)
-    * [Method Descriptions](#method-descriptions)
+    * [Property Descriptions](#property-descriptions-1)
+    * [Method Descriptions](#method-descriptions-1)
 * [Known issues and workarounds](#known-issues-and-workarounds)
 * [GDNative library source](#gdnative-library-source)
 * [License](#license)
 
 ## Installation
 
-The plugin can be installed from the Godot Asset Library directly in the editor. Alternatively, you can also directly clone/download this repository and add it to the *root* of your Godot project.
+~The plugin can be installed from the Godot Asset Library directly in the editor.~ (Not yet.) Alternatively, you can also directly clone/download this repository and add it to the *root* of your Godot project.
 
 ⚠️ *Note that the plugin is currently only available for Windows.*
 
