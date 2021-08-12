@@ -283,6 +283,6 @@ The source of the `libgdholoplay.dll` GDNative library can be found at https://g
 
 ## License
 
-This plugin is available under the [MIT license](LICENSE).
+This plugin is available under the [MIT license](addons/holoplay/LICENSE).
 
-`HoloPlayCore.dll` is part of the *HoloPlay Core SDK* which is distributed by Looking Glass Factory under a [separate license](LICENSE_HOLOPLAYCORE).
+`HoloPlayCore.dll` is part of the *HoloPlay Core SDK* which is distributed by Looking Glass Factory under a [separate license](addons/holoplay/LICENSE_HOLOPLAYCORE).
