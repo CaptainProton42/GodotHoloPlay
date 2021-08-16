@@ -1,4 +1,4 @@
-# HoloPlay for Godot 3.x
+# HoloPlay for Godot 3.3
 
 This plugin adds suport for holographics displays made by [Looking Glass Factory](https://lookingglassfactory.com/) to the [Godot Engine](https://godotengine.org/).
 
