@@ -28,7 +28,7 @@ The GDNative source is hosted [here](https://github.com/CaptainProton42/GodotHol
 
 ## Installation
 
-~The plugin can be installed from the Godot Asset Library directly in the editor.~ (Not yet.) Alternatively, you can also directly clone/download this repository and add it to the *root* of your Godot project.
+The plugin can be installed from the [Godot Asset Library](https://godotengine.org/asset-library/asset/1019) directly in the editor. Alternatively, you can also directly clone/download this repository and add it to the *root* of your Godot project.
 
 ⚠️ *Note that the plugin is currently only available for Windows.*
 
