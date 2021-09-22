@@ -279,7 +279,7 @@ Saves the current quilt as a PNG file to the `user://` directory.
 
 ## GDNative library source
 
-The source of the `libgdholoplay.dll` GDNative library can be found at https://github.com/CaptainProton42/GodotHoloPlayGDNative.
+The source of the `libgdholoplay.dll` GDNative library can be found at https://github.com/CaptainProton42/GodotHoloPlayNative.
 
 ## License
 
